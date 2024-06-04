@@ -2,26 +2,26 @@
 #include <iostream>
 #include <vector>
 
-class Lists
-{
-	std::vector<std::string> nomines = {
-	"Keon", "Tui", "Limak", "Adeline", "Isam",
-	"Kamek","Namiko", "Vigi", "Durk", "Aguilar",
-	"Khai", "Tyson", "Koda", "Vasu", "Jadon",
-	"Rhea", "Yali", "Yalu", "Neveah", "Kaia",
-	"Cara", "Daya", "Eileen", "Oba", "Semmi",
-	"Anita", "Ainara", "Jerold", "Tobias", "Palafox",
-	"Alcetas", "Karno","Grozdan", "Selasi", "Gerard"
-	};
-	std::vector<std::string> urbes = {
-	"Callum", "Arrun", "Maidan", "Zakaria",
-	"Sankai", "Ziza", "Alarcon", "Aulus", "Drymadoria",
-	"Drimadoria", "Lykianti", "Nazar", "Elnashar",
-	"Aminita", "Oha", "Aoleon", "Javad", "Thiago",
-	"Palafax", "Ogallala", "Menin", "Engedi", "Rosta",
-	"Cairno", "Azgoah", "Saurr", "Merav", "Eknashar"
-	};
-};
+//namespace Lists
+//{
+//	std::vector<std::string> nomines = {
+//	"Keon", "Tui", "Limak", "Adeline", "Isam",
+//	"Kamek","Namiko", "Vigi", "Durk", "Aguilar",
+//	"Khai", "Tyson", "Koda", "Vasu", "Jadon",
+//	"Rhea", "Yali", "Yalu", "Neveah", "Kaia",
+//	"Cara", "Daya", "Eileen", "Oba", "Semmi",
+//	"Anita", "Ainara", "Jerold", "Tobias", "Palafox",
+//	"Alcetas", "Karno","Grozdan", "Selasi", "Gerard"
+//	};
+//	std::vector<std::string> urbes = {
+//	"Callum", "Arrun", "Maidan", "Zakaria",
+//	"Sankai", "Ziza", "Alarcon", "Aulus", "Drymadoria",
+//	"Drimadoria", "Lykianti", "Nazar", "Elnashar",
+//	"Aminita", "Oha", "Aoleon", "Javad", "Thiago",
+//	"Palafax", "Ogallala", "Menin", "Engedi", "Rosta",
+//	"Cairno", "Azgoah", "Saurr", "Merav", "Eknashar"
+//	};
+//};
 
 
 namespace Iuvo
@@ -30,7 +30,7 @@ namespace Iuvo
 	void Write(const std::string message);
 	void WriteLine(const std::string message);
 	void ClearConsole();
-	static void PressAnyKeyToContinue();
+	void PressAnyKeyToContinue();
 	bool WipeAndFlush();
 	bool Flush();
 	int GetValidatedInt(const char* message, int MinRange = 0, int MaxRange = 0);
@@ -39,6 +39,7 @@ namespace Iuvo
 	// must delete reference returned after use.
 	char* String_255();
 	int RandomInt(int MinRange = 0, int MaxRange = 0);
+	std::string GetRandomWord(const std::vector<std::string>& _vector);
 	// Detects memory leaks
 	void MemoryNet();
 

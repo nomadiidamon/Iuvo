@@ -1,9 +1,13 @@
 // Iuvare.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
-#include <iostream>
+#include "Iuvo.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	srand(NULL);
+
+	std::cout << "Hello World!\n";
+	Iuvo::PressAnyKeyToContinue();
+	Iuvo::ClearConsole();
+
 }

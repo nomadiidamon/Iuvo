@@ -89,13 +89,25 @@ int Iuvo::RandomInt(int MinRange, int MaxRange)
 	}
 	else {
 		for (int i = 0; ; i++) {
-			int x = rand();
-			if (MinRange < x && x < MaxRange) {
+			int x = rand() % (MaxRange - MinRange + 1) + MinRange;
+			if (MinRange < x) {
 				random = x;
 				return random;
 			}
 		}
 	}
+}
+
+std::string Iuvo::GetRandomWord(const std::vector<std::string>& _vector)
+{
+	std::string random;
+
+	size_t value = Iuvo::RandomInt(-1, _vector.size()-1);
+
+	random = _vector[value];
+
+
+	return random;
 }
 
 void Iuvo::MemoryNet()
