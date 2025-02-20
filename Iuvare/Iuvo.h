@@ -1,87 +1,43 @@
 #pragma once
-#include <iostream>
-#include <vector>
-
-//namespace Lists
-//{
-//	std::vector<std::string> nomines = {
-//	"Keon", "Tui", "Limak", "Adeline", "Isam",
-//	"Kamek","Namiko", "Vigi", "Durk", "Aguilar",
-//	"Khai", "Tyson", "Koda", "Vasu", "Jadon",
-//	"Rhea", "Yali", "Yalu", "Neveah", "Kaia",
-//	"Cara", "Daya", "Eileen", "Oba", "Semmi",
-//	"Anita", "Ainara", "Jerold", "Tobias", "Palafox",
-//	"Alcetas", "Karno","Grozdan", "Selasi", "Gerard"
-//	};
-//	std::vector<std::string> urbes = {
-//	"Callum", "Arrun", "Maidan", "Zakaria",
-//	"Sankai", "Ziza", "Alarcon", "Aulus", "Drymadoria",
-//	"Drimadoria", "Lykianti", "Nazar", "Elnashar",
-//	"Aminita", "Oha", "Aoleon", "Javad", "Thiago",
-//	"Palafax", "Ogallala", "Menin", "Engedi", "Rosta",
-//	"Cairno", "Azgoah", "Saurr", "Merav", "Eknashar"
-//	};
-//};
+#include "IuvoConsole.h"
+#include "IuvoInput.h"
+#include "IuvoNames.h"
 
 
 namespace Iuvo
 {
+	int RandomInt(int MinRange, int MaxRange)
+	{
+		int random;
+		if (MinRange == 0 && MaxRange == 0) {
+			random = rand();
+			return random;
+		}
+		else {
+			for (int i = 0; ; i++) {
+				int x = rand() % (MaxRange - MinRange + 1) + MinRange;
+				if (MinRange < x) {
+					random = x;
+					return random;
+				}
+			}
+		}
+	}
 
-	void Write(const std::string message);
-	void WriteLine(const std::string message);
-	void ClearConsole();
-	void PressAnyKeyToContinue();
-	bool WipeAndFlush();
-	bool Flush();
-	int GetValidatedInt(const char* message, int MinRange = 0, int MaxRange = 0);
-	// must delete reference returned after use.
-	char* GetValidatedString_255(const char* message);
-	// must delete reference returned after use.
-	char* String_255();
-	int RandomInt(int MinRange = 0, int MaxRange = 0);
-	std::string GetRandomWord(const std::vector<std::string>& _vector);
 	// Detects memory leaks
-	void MemoryNet();
+	void MemoryNet()
+	{
+
+	// Change this number to the line number the Output window shows you
+	// to follow a memory leak. Put -1 to disable.
+	#define MEMORY_LEAK_LINE -1
+
+
+		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+		_CrtSetBreakAlloc(MEMORY_LEAK_LINE); // DO NOT COMMENT OUT THIS LINE
+		_CrtDumpMemoryLeaks();
+	}
 
 };
 
-enum ConsoleColor
-{
-	Black,
-	Red,
-	Green,
-	Yellow,
-	Blue,
-	Magenta,
-	Cyan,
-	White,
-	Default = 9
-};
-
-class Console
-{
-public:
-	static void ResizeWindow(int width, int height);
-	static int GetWindowWidth() { return windowWidth; }
-	static int GetWindowHeight() { return windowHeight; }
-	static void SetCursorPosition(int x, int y);
-	static void SetCursorLeft(int x);
-	static void SetForegroundColor(ConsoleColor foreColor);
-	static void SetForegroundColor(int r, int g, int b);
-	static void SetBackgroundColor(ConsoleColor backColor);
-	static void SetBackgroundColor(int r, int g, int b);
-	static void Reset();
-	static void Clear();
-
-	static void Write(std::string message);
-	static void Write(std::string message, ConsoleColor foreColor, ConsoleColor backColor = ConsoleColor::Black);
-	static void WriteLine(std::string message);
-	static void WriteLine(std::string message, ConsoleColor foreColor, ConsoleColor backColor = ConsoleColor::Black);
-
-
-private:
-	static const std::string ESC;
-
-	static int windowWidth, windowHeight;
-};
 

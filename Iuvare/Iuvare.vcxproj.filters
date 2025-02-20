@@ -18,12 +18,21 @@
     <ClCompile Include="Iuvare.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Iuvo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Iuvo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IuvoConsole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IuvoInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IuvoNames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IuvoStringVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
