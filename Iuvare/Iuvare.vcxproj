@@ -135,10 +135,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Iuvo.h" />
+    <ClInclude Include="IuvoCharacters.h" />
+    <ClInclude Include="IuvoColors.h" />
     <ClInclude Include="IuvoConsole.h" />
+    <ClInclude Include="IuvoDefines.h" />
+    <ClInclude Include="IuvoEntities.h" />
     <ClInclude Include="IuvoInput.h" />
+    <ClInclude Include="IuvoMath.h" />
     <ClInclude Include="IuvoNames.h" />
+    <ClInclude Include="IuvoNumbers.h" />
+    <ClInclude Include="IuvoRaster.h" />
+    <ClInclude Include="IuvoRPG.h" />
     <ClInclude Include="IuvoStringVector.h" />
+    <ClInclude Include="IuvoStructs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

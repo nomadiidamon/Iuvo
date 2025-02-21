@@ -57,8 +57,6 @@ namespace IuvoNames {
 		toReturn.clear();
 		toReturn.reserve(numberOfNames);
 
-		std::srand(std::time(NULL));
-
 		GenerateUniqueName(numberOfNames, toReturn, toSelectFrom);
 
 		return toReturn;

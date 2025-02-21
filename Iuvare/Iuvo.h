@@ -1,29 +1,14 @@
-#pragma once
+#ifndef IUVO
+#define IUVO
+
 #include "IuvoConsole.h"
 #include "IuvoInput.h"
 #include "IuvoNames.h"
-
+#include "IuvoRaster.h"
+#include "IuvoRPG.h"
 
 namespace Iuvo
 {
-	int RandomInt(int MinRange, int MaxRange)
-	{
-		int random;
-		if (MinRange == 0 && MaxRange == 0) {
-			random = rand();
-			return random;
-		}
-		else {
-			for (int i = 0; ; i++) {
-				int x = rand() % (MaxRange - MinRange + 1) + MinRange;
-				if (MinRange < x) {
-					random = x;
-					return random;
-				}
-			}
-		}
-	}
-
 	// Detects memory leaks
 	void MemoryNet()
 	{
@@ -40,4 +25,4 @@ namespace Iuvo
 
 };
 
-
+#endif

@@ -1,6 +1,7 @@
 #ifndef IUVO_STRING_VECTOR
 #define IUVO_STRING_VECTOR
 
+#include "IuvoNumbers.h"
 #include <vector>
 #include <string>
 
@@ -13,6 +14,10 @@ namespace IuvoStringVector {
 	/// <returns> a randomly selected string from the given vector</returns>
 	std::string RandomString(const std::vector<std::string>& toSelectFrom) {
 		int namesVectorSize = toSelectFrom.size();
+		if (!IuvoNumbers::randHasBeenInitilized) {
+			IuvoNumbers::InitializeRandomSeed();
+		}
+
 		int randomIndex = std::rand() % namesVectorSize;
 		return toSelectFrom[randomIndex];
 	}
